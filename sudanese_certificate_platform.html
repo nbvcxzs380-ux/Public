@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>منصة طلاب الشهادة السودانية</title>
+<style>
+:root{--navy:#082c63;--navy2:#061e43;--blue:#1473df;--gold:#ffbd35;--ink:#11284c;--muted:#667894;--line:#e2eaf5;--bg:#f3f7fc}
+*{box-sizing:border-box}body{margin:0;font-family:Tahoma,Arial,sans-serif;background:var(--bg);color:var(--ink)}button,input{font:inherit}button{cursor:pointer}
+.top{height:76px;background:linear-gradient(110deg,var(--navy2),#0b3c80);color:white;display:flex;align-items:center;justify-content:space-between;padding:0 24px;gap:18px;position:sticky;top:0;z-index:5;box-shadow:0 3px 12px #001a4433}
+.brand{display:flex;align-items:center;gap:12px;font-weight:bold;font-size:18px}.cap{font-size:34px}.search{width:min(38vw,500px);background:#ffffff18;border:1px solid #ffffff2a;border-radius:28px;padding:12px 18px;color:white;outline:none}.search::placeholder{color:#d4e2fa}.topbtn{background:transparent;border:0;color:white;font-size:22px}
+.layout{display:grid;grid-template-columns:230px minmax(0,1fr);min-height:calc(100vh - 76px)}aside{background:linear-gradient(180deg,#082954,#061b3a);padding:18px 13px;color:white}.nav{display:flex;align-items:center;gap:12px;width:100%;text-align:right;border:0;background:transparent;color:#e8f1ff;padding:14px 13px;border-radius:10px;margin:3px 0;font-size:14px}.nav span{font-size:19px;width:25px}.nav.active,.nav:hover{background:#176bd1;color:white}.aside-bottom{text-align:center;margin-top:50px;color:#ffbd35;font-size:15px;line-height:2}
+main{padding:25px;min-width:0}.hero{min-height:290px;border-radius:14px;overflow:hidden;position:relative;background:linear-gradient(90deg,#07356d22,#06234bd9),linear-gradient(130deg,#4d9fdc,#0e4c83 58%,#1a6e98);color:white;display:flex;align-items:center;padding:36px 5%;box-shadow:0 5px 15px #153b6c20}.hero:before{content:"🇸🇩";position:absolute;left:4%;top:18px;font-size:100px;filter:drop-shadow(0 5px 4px #0005);opacity:.9}.hero:after{content:"";position:absolute;inset:auto 0 0;height:70px;background:linear-gradient(transparent,#05264acc)}.hero-content{position:relative;z-index:1;max-width:720px;margin-right:auto;text-align:center}.hero h1{font-size:clamp(25px,3vw,42px);margin:0 0 8px}.hero h1 strong{color:var(--gold);display:block;margin-top:6px}.hero p{font-size:18px;margin:15px 0 25px}.hero-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}.btn{border:0;border-radius:9px;padding:12px 18px;background:var(--blue);color:white;font-weight:bold}.btn.gold{background:var(--gold);color:#122c50}.btn.light{background:#ffffff18;border:1px solid #ffffff55}.section{background:white;border:1px solid var(--line);border-radius:13px;padding:18px;margin-top:16px;box-shadow:0 3px 10px #0b31600a}.section-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:16px}.section h2{font-size:20px;margin:0}.small-link{border:0;background:none;color:var(--blue);font-weight:bold}.subjects{display:grid;grid-template-columns:repeat(8,minmax(80px,1fr));gap:10px}.subject{border:1px solid var(--line);border-radius:12px;background:#fff;padding:14px 5px;text-align:center;color:var(--ink);transition:.15s}.subject:hover,.subject.selected{border-color:#3187eb;background:#edf6ff;transform:translateY(-2px)}.subject .emoji{display:grid;place-items:center;margin:0 auto 10px;width:54px;height:54px;border-radius:50%;font-size:27px;background:#eaf3ff}.subject b{font-size:13px}.columns{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:16px}.columns .section{margin-top:0}.item{display:flex;align-items:center;gap:10px;padding:12px 0;border-top:1px solid #edf1f7;font-size:13px}.item:first-of-type{border-top:0}.item .symbol{width:38px;height:38px;border-radius:10px;background:#eaf3ff;display:grid;place-items:center;font-size:20px;flex-shrink:0}.item .desc{flex:1}.item small{display:block;color:var(--muted);margin-top:5px}.item button{font-size:12px;padding:8px 10px}.notice{margin-top:16px;background:linear-gradient(100deg,#10284a,#071c39);color:white;border-radius:12px;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;gap:15px}.notice strong{color:var(--gold);font-size:20px}.notice p{margin:6px 0 0;color:#d7e3f6;font-size:13px}.page-title{display:flex;justify-content:space-between;align-items:center;margin:4px 0 18px}.page-title h1{margin:0;font-size:26px}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.card{background:white;border:1px solid var(--line);border-radius:12px;padding:18px}.card h3{margin:8px 0}.card p{color:var(--muted);font-size:14px;line-height:1.7}.pill{display:inline-block;border-radius:30px;background:#eaf3ff;color:#145db2;padding:6px 10px;font-size:12px}.field{width:100%;padding:12px;border:1px solid var(--line);border-radius:9px;margin:8px 0 12px;outline-color:#3388e9}.question{padding:16px 0;border-top:1px solid var(--line)}.answer{display:block;width:100%;text-align:right;padding:12px;margin:8px 0;border:1px solid var(--line);border-radius:8px;background:white}.answer:hover{background:#edf6ff;border-color:#75aceb}.answer.correct{background:#e7f8ed;border-color:#35a85a}.answer.wrong{background:#fff0f0;border-color:#e46b6b}.muted{color:var(--muted)}.hidden{display:none!important}.footer{text-align:center;color:var(--muted);font-size:12px;padding:25px}
+@media(max-width:1050px){.subjects{grid-template-columns:repeat(4,1fr)}.columns{grid-template-columns:1fr 1fr}.columns .section:last-child{grid-column:1/-1}.cards{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:700px){.top{height:auto;min-height:68px;padding:12px;flex-wrap:wrap}.brand{font-size:14px}.cap{font-size:26px}.search{order:3;width:100%}.layout{display:block}aside{display:flex;overflow:auto;padding:8px;gap:5px;position:sticky;top:105px;z-index:4} .nav{min-width:max-content;width:auto;margin:0;padding:10px;font-size:12px}.nav span{width:auto} .aside-bottom{display:none}main{padding:12px}.hero{min-height:310px;padding:24px 14px}.hero:before{font-size:65px;top:8px;left:8px}.hero p{font-size:15px}.subjects{grid-template-columns:repeat(2,1fr)}.columns,.cards{grid-template-columns:1fr}.columns .section:last-child{grid-column:auto}.notice{align-items:flex-start;flex-direction:column}.page-title h1{font-size:22px}}
+</style>
+</head>
+<body>
+<header class="top">
+ <div class="brand"><span class="cap">🎓</span><div>منصة طلاب الشهادة السودانية<div style="font-size:12px;font-weight:normal;margin-top:4px">معًا نحو النجاح</div></div></div>
+ <input id="search" class="search" placeholder="ابحث عن درس، مادة، أو سؤال..." aria-label="بحث">
+ <button class="topbtn" title="الإشعارات" onclick="showPage('news')">♧</button><button class="topbtn" title="القائمة" onclick="document.querySelector('aside').classList.toggle('hidden')">☰</button>
+</header>
+<div class="layout">
+<aside>
+ <button class="nav active" data-page="home" onclick="showPage('home')"><span>⌂</span>الرئيسية</button>
+ <button class="nav" data-page="subjects" onclick="showPage('subjects')"><span>📚</span>المواد الدراسية</button>
+ <button class="nav" data-page="lessons" onclick="showPage('lessons')"><span>▶</span>الدروس والفيديوهات</button>
+ <button class="nav" data-page="questions" onclick="showPage('questions')"><span>ⓘ</span>الأسئلة والبنوك</button>
+ <button class="nav" data-page="tests" onclick="showPage('tests')"><span>☑</span>الاختبارات التجريبية</button>
+ <button class="nav" data-page="notes" onclick="showPage('notes')"><span>📝</span>ملاحظاتي</button>
+ <button class="nav" data-page="files" onclick="showPage('files')"><span>☁</span>الملفات والتحميلات</button>
+ <button class="nav" data-page="news" onclick="showPage('news')"><span>☷</span>الإعلانات والأخبار</button>
+ <button class="nav" data-page="results" onclick="showPage('results')"><span>▥</span>النتائج والتقدم</button>
+ <div class="aside-bottom">🎓<br>بالعلم نبني المستقبل</div>
+</aside>
+<main>
+<section id="home" class="page">
+ <div class="hero"><div class="hero-content"><h1>منصة طلاب الصف الثالث<strong>الشهادة السودانية</strong></h1><p>كل ما تحتاجه في مكان واحد.. لتصل إلى حلمك</p><div class="hero-actions"><button class="btn gold" onclick="showPage('subjects')">ابدأ المذاكرة ←</button><button class="btn light" onclick="showPage('tests')">اختبر مستواك</button></div></div></div>
+ <div class="section"><div class="section-head"><h2>المواد الدراسية</h2><button class="small-link" onclick="showPage('subjects')">عرض الكل</button></div><div id="homeSubjects" class="subjects"></div></div>
+ <div class="columns">
+  <div class="section"><div class="section-head"><h2>الاختبارات التجريبية</h2><button class="small-link" onclick="showPage('tests')">عرض الكل</button></div><div id="homeTests"></div></div>
+  <div class="section"><div class="section-head"><h2>أحدث الدروس</h2><button class="small-link" onclick="showPage('lessons')">عرض الكل</button></div><div id="homeLessons"></div></div>
+  <div class="section"><div class="section-head"><h2>آخر الأخبار</h2></div><div id="homeNews"></div></div>
+ </div>
+ <div class="notice"><div><strong>النجاح ليس صدفة.. بل نتيجة تخطيط واجتهاد</strong><p>كن دائمًا على موعد مع التفوق</p></div><button class="btn gold" onclick="showPage('notes')">خطط لمذاكرتك الآن ←</button></div>
+</section>
+<section id="subjects" class="page hidden"><div class="page-title"><h1>المواد الدراسية</h1><span class="pill">الصف الثالث الثانوي</span></div><p class="muted">اختر المادة للوصول إلى دروسها وأسئلتها. المحتوى التجريبي قابل للتعديل والإضافة.</p><div id="allSubjects" class="subjects"></div><div id="subjectDetails" class="section hidden"></div></section>
+<section id="lessons" class="page hidden"><div class="page-title"><h1>الدروس والفيديوهات</h1></div><div id="lessonList" class="cards"></div></section>
+<section id="questions" class="page hidden"><div class="page-title"><h1>بنك الأسئلة</h1></div><div class="section"><p>اختر مادة ثم ابدأ التدريب على الأسئلة التجريبية.</p><select id="questionSubject" class="field"></select><button class="btn" onclick="startQuiz()">ابدأ التدريب</button><div id="quizArea"></div></div></section>
+<section id="tests" class="page hidden"><div class="page-title"><h1>الاختبارات التجريبية</h1></div><div class="cards" id="testList"></div><div id="testArea" class="section hidden"></div></section>
+<section id="notes" class="page hidden"><div class="page-title"><h1>ملاحظاتي وخطة المذاكرة</h1></div><div class="section"><label for="noteText">اكتب ملاحظاتك أو خطة اليوم:</label><textarea id="noteText" class="field" rows="7" placeholder="مثال: مراجعة قوانين الفيزياء وحل 20 سؤالًا..."></textarea><button class="btn" onclick="saveNote()">حفظ الملاحظات</button><span id="noteStatus" class="muted"></span></div></section>
+<section id="files" class="page hidden"><div class="page-title"><h1>الملفات والتحميلات</h1></div><div class="section"><h3>ملفاتك الدراسية</h3><p>يمكنك إضافة روابط ملفات PDF والملخصات الرسمية لاحقًا.</p><input id="fileTitle" class="field" placeholder="اسم الملف أو الملخص"><input id="fileUrl" class="field" placeholder="رابط الملف المباشر (PDF أو صفحة)"><button class="btn" onclick="addFile()">إضافة رابط</button><div id="fileList"></div></div></section>
+<section id="news" class="page hidden"><div class="page-title"><h1>الإعلانات والأخبار</h1></div><div class="section" id="newsList"></div></section>
+<section id="results" class="page hidden"><div class="page-title"><h1>النتائج والتقدم</h1></div><div class="cards"><div class="card"><span class="pill">الاختبارات المكتملة</span><h2 id="completed">0</h2><p>عدد الاختبارات التي أكملتها على هذا الجهاز.</p></div><div class="card"><span class="pill">متوسط الدرجات</span><h2 id="average">—</h2><p>متوسط أدائك في الاختبارات التجريبية.</p></div><div class="card"><span class="pill">الملاحظات المحفوظة</span><h2 id="savedNote">0</h2><p>حافظ على خطة مذاكرتك محدّثة.</p></div></div><div class="section"><h3>تذكير</h3><p>هذه نسخة تجريبية تحفظ تقدمك محليًا على نفس المتصفح، ولا تحتوي بعد على حسابات طلاب أو مزامنة بين الأجهزة.</p></div></section>
+<div class="footer">منصة تعليمية تجريبية لطلاب الشهادة السودانية • المحتوى الرسمي يضاف بعد التحقق من مصادره</div>
+</main></div>
+<script>
+const subjects=[
+{name:'اللغة العربية',icon:'📘',color:'#e5f0ff',desc:'النحو والبلاغة والأدب والتعبير'},
+{name:'اللغة الإنجليزية',icon:'🔤',color:'#ffe8ee',desc:'Grammar, reading and writing'},
+{name:'الرياضيات',icon:'🧮',color:'#e1f7ef',desc:'القوانين والتدريبات والمسائل'},
+{name:'الفيزياء',icon:'⚛️',color:'#f2e6ff',desc:'المفاهيم والقوانين والتطبيقات'},
+{name:'الكيمياء',icon:'⚗️',color:'#fff0d9',desc:'التفاعلات والمعادلات الكيميائية'},
+{name:'الأحياء',icon:'🌿',color:'#e1f7e9',desc:'أجهزة الجسم والوراثة والبيئة'},
+{name:'الجغرافيا',icon:'🌍',color:'#e1f7fb',desc:'الخرائط والمناخ والسكان'},
+{name:'التاريخ',icon:'📜',color:'#f8eadf',desc:'الأحداث والشخصيات التاريخية'}];
+const lessons=[
+{title:'مقدمة في قوانين الحركة',subject:'الفيزياء',icon:'⚛️',duration:'12 دقيقة',desc:'مراجعة مفاهيم الحركة والقوانين الأساسية.'},
+{title:'التفاعلات الكيميائية',subject:'الكيمياء',icon:'⚗️',duration:'15 دقيقة',desc:'فهم أنواع التفاعلات وكيفية موازنة المعادلات.'},
+{title:'المتتاليات الحسابية',subject:'الرياضيات',icon:'🧮',duration:'18 دقيقة',desc:'شرح الفكرة مع أمثلة تدريبية.'},
+{title:'قواعد اللغة الإنجليزية',subject:'اللغة الإنجليزية',icon:'🔤',duration:'10 دقائق',desc:'مراجعة قواعد أساسية مع تطبيقات.'},
+{title:'مهارات التعبير العربي',subject:'اللغة العربية',icon:'📘',duration:'14 دقيقة',desc:'خطوات تنظيم الإجابة وكتابة موضوع متماسك.'},
+{title:'أساسيات الوراثة',subject:'الأحياء',icon:'🌿',duration:'16 دقيقة',desc:'مصطلحات ومفاهيم أساسية في الوراثة.'}];
+const tests=[
+{subject:'اللغة العربية',count:10,time:15},{subject:'الرياضيات',count:10,time:20},{subject:'الفيزياء',count:10,time:20},{subject:'الكيمياء',count:10,time:20},{subject:'اللغة الإنجليزية',count:10,time:15},{subject:'الأحياء',count:10,time:15}];
+const quizBank={
+'الرياضيات':[{q:'إذا كان 2س = 10، فإن قيمة س تساوي:',a:['2','5','10','20'],c:1},{q:'ناتج 3² يساوي:',a:['6','8','9','12'],c:2}],
+'الفيزياء':[{q:'وحدة قياس القوة في النظام الدولي هي:',a:['الجول','النيوتن','الواط','الأمبير'],c:1},{q:'السرعة تساوي:',a:['المسافة ÷ الزمن','الزمن ÷ المسافة','الكتلة × الحجم','القوة ÷ الزمن'],c:0}],
+'الكيمياء':[{q:'الرمز الكيميائي للأكسجين هو:',a:['Ox','O','Og','H'],c:1},{q:'الماء يتكون من:',a:['هيدروجين وأكسجين','كربون وأكسجين','نيتروجين وهيدروجين','صوديوم وكلور'],c:0}],
+'اللغة العربية':[{q:'الجملة الاسمية تبدأ غالبًا بـ:',a:['فعل','اسم','حرف جر','أداة نفي'],c:1},{q:'جمع كلمة «كتاب» هو:',a:['كاتب','كتابة','كتب','مكتبة'],c:2}],
+'اللغة الإنجليزية':[{q:'Choose the correct form: She ___ to school every day.',a:['go','goes','going','gone'],c:1}],
+'الأحياء':[{q:'الوحدة الأساسية لبناء الكائن الحي هي:',a:['النسيج','العضو','الخلية','الجهاز'],c:2}],
+'الجغرافيا':[{q:'الخريطة تستخدم أساسًا لتمثيل:',a:['سطح الأرض أو جزء منه','تركيب الخلية','التفاعلات الكيميائية','الحركة فقط'],c:0}],
+'التاريخ':[{q:'دراسة التاريخ تهتم أساسًا بـ:',a:['أحداث الماضي','حساب المساحات فقط','تركيب المواد','قوانين الحركة'],c:0}]
+};
+function el(id){return document.getElementById(id)}
+function subjectCard(s){return `<button class="subject" onclick="openSubject('${s.name}')"><span class="emoji" style="background:${s.color}">${s.icon}</span><b>${s.name}</b></button>`}
+el('homeSubjects').innerHTML=subjects.map(subjectCard).join('');
+el('allSubjects').innerHTML=subjects.map(subjectCard).join('');
+el('homeTests').innerHTML=tests.slice(0,3).map(t=>`<div class="item"><div class="symbol">📝</div><div class="desc"><b>اختبار تجريبي في ${t.subject}</b><small>${t.count} أسئلة • ${t.time} دقيقة</small></div><button class="btn" onclick="beginTest('${t.subject}')">ابدأ</button></div>`).join('');
+el('homeLessons').innerHTML=lessons.slice(0,3).map(l=>`<div class="item"><div class="symbol">${l.icon}</div><div class="desc"><b>${l.title}</b><small>${l.subject} • ${l.duration}</small></div><button class="small-link" onclick="showLesson('${l.title}')">التفاصيل</button></div>`).join('');
+const news=['تابع الإعلانات الرسمية الخاصة بجدول امتحانات الشهادة السودانية من الجهات المختصة.','أضف نماذج الامتحانات السابقة بعد التأكد من صحة مصدرها.','نظّم وقتك يوميًا وراجع الدروس أولًا بأول.'];
+el('homeNews').innerHTML=news.slice(0,3).map(n=>`<div class="item"><span style="color:#1473df">●</span><div>${n}</div></div>`).join('');
+el('lessonList').innerHTML=lessons.map(l=>`<div class="card"><span style="font-size:28px">${l.icon}</span><span class="pill">${l.subject}</span><h3>${l.title}</h3><p>${l.desc}</p><small class="muted">المدة المقترحة: ${l.duration}</small><p><button class="btn" onclick="showLesson('${l.title}')">عرض الدرس</button></p></div>`).join('');
+el('testList').innerHTML=tests.map(t=>`<div class="card"><span style="font-size:26px">📝</span><h3>اختبار ${t.subject}</h3><p>${t.count} أسئلة تدريبية • ${t.time} دقيقة</p><button class="btn" onclick="beginTest('${t.subject}')">ابدأ الاختبار</button></div>`).join('');
+el('questionSubject').innerHTML=subjects.map(s=>`<option>${s.name}</option>`).join('');
+el('newsList').innerHTML=news.map((n,i)=>`<div class="item"><div class="symbol">📢</div><div>${n}<small>إعلان ${i+1} • محتوى إرشادي</small></div></div>`).join('');
+function showPage(id){document.querySelectorAll('.page').forEach(p=>p.classList.add('hidden'));el(id).classList.remove('hidden');document.querySelectorAll('.nav').forEach(n=>n.classList.toggle('active',n.dataset.page===id));if(id==='results')updateResults();window.scrollTo({top:0,behavior:'smooth'})}
+function openSubject(name){showPage('subjects');el('subjectDetails').classList.remove('hidden');const s=subjects.find(x=>x.name===name);el('subjectDetails').innerHTML=`<h2>${s.icon} ${name}</h2><p>${s.desc}</p><h3>الدروس المتاحة</h3>${lessons.filter(l=>l.subject===name).map(l=>`<div class="item"><div class="desc"><b>${l.title}</b><small>${l.duration}</small></div><button class="btn" onclick="showLesson('${l.title}')">فتح</button></div>`).join('')||'<p>سيتم إضافة الدروس لهذه المادة لاحقًا.</p>'}<button class="btn" onclick="el('questionSubject').value='${name}';showPage('questions')">تدرب على الأسئلة</button>`;el('subjectDetails').scrollIntoView({behavior:'smooth'})}
+function showLesson(title){const l=lessons.find(x=>x.title===title);alert('الدرس: '+title+'\\nالمادة: '+(l?.subject||'')+'\\n\\nهذا نموذج أولي؛ أضف رابط الفيديو أو محتوى الدرس الحقيقي عند تجهيز المنصة.')}
+function beginTest(name){showPage('tests');el('testArea').classList.remove('hidden');el('testArea').innerHTML=`<h2>اختبار ${name}</h2><p>الأسئلة التالية تدريبية توضيحية وليست امتحانًا رسميًا.</p><div id="testQuestions"></div><button class="btn" onclick="gradeQuiz('testQuestions','${name}')">إنهاء الاختبار</button><div id="testResult"></div>`;renderQuestions('testQuestions',name);el('testArea').scrollIntoView({behavior:'smooth'})}
+function startQuiz(){const name=el('questionSubject').value;el('quizArea').innerHTML=`<h3>تدريب ${name}</h3><p class="muted">أسئلة توضيحية للمراجعة وليست بديلًا عن المنهج الرسمي.</p><div id="activeQuestions"></div><button class="btn" onclick="gradeQuiz('activeQuestions','${name}')">تصحيح الإجابات</button><div id="activeResult"></div>`;renderQuestions('activeQuestions',name)}
+function renderQuestions(container,name){let qs=quizBank[name]||quizBank['الرياضيات'];el(container).innerHTML=qs.map((q,i)=>`<div class="question"><b>${i+1}. ${q.q}</b>${q.a.map((a,j)=>`<button class="answer" data-q="${i}" data-a="${j}" onclick="pickAnswer(this,'${container}')">${['أ','ب','ج','د'][j]}. ${a}</button>`).join('')}</div>`).join('');}
+function pickAnswer(btn,container){btn.parentElement.querySelectorAll('.answer').forEach(b=>b.style.outline='');btn.style.outline='2px solid #1473df';btn.parentElement.dataset.selected=btn.dataset.q+':'+btn.dataset.a}
+function gradeQuiz(container,name){const qs=quizBank[name]||quizBank['الرياضيات'];let score=0;const blocks=el(container).querySelectorAll('.question');blocks.forEach((block,i)=>{const chosen=block.querySelector('.answer[style*="1473df"]');if(chosen&&Number(chosen.dataset.a)===qs[i].c)score++;block.querySelectorAll('.answer').forEach((b,j)=>{if(j===qs[i].c)b.classList.add('correct');else if(b===chosen)b.classList.add('wrong');b.disabled=true})});let results=JSON.parse(localStorage.getItem('examResults')||'[]');results.push({name,score,total:qs.length});localStorage.setItem('examResults',JSON.stringify(results));const target=container==='testQuestions'?'testResult':'activeResult';el(target).innerHTML=`<h3>نتيجتك: ${score} من ${qs.length}</h3><p>${score===qs.length?'ممتاز! إجاباتك كلها صحيحة.':'واصل المراجعة والتدريب لتحسين نتيجتك.'}</p>`;updateResults()}
+function saveNote(){localStorage.setItem('studyNote',el('noteText').value);el('noteStatus').textContent=' تم حفظ الملاحظات على هذا الجهاز.';updateResults()}
+el('noteText').value=localStorage.getItem('studyNote')||'';
+function addFile(){const title=el('fileTitle').value.trim(),url=el('fileUrl').value.trim();if(!title||!url){alert('اكتب اسم الملف والرابط أولًا.');return}let files=JSON.parse(localStorage.getItem('studyFiles')||'[]');files.push({title,url});localStorage.setItem('studyFiles',JSON.stringify(files));el('fileTitle').value='';el('fileUrl').value='';renderFiles()}
+function renderFiles(){const files=JSON.parse(localStorage.getItem('studyFiles')||'[]');el('fileList').innerHTML=files.map(f=>`<div class="item"><div class="desc"><b>${f.title}</b><small><a href="${f.url}" target="_blank" rel="noopener">فتح الملف</a></small></div></div>`).join('')||'<p class="muted">لم تتم إضافة ملفات بعد.</p>'}
+function updateResults(){const r=JSON.parse(localStorage.getItem('examResults')||'[]');el('completed').textContent=r.length;el('average').textContent=r.length?Math.round(r.reduce((a,b)=>a+b.score/b.total*100,0)/r.length)+'%':'—';el('savedNote').textContent=localStorage.getItem('studyNote')?'1':'0'}
+el('search').addEventListener('keydown',e=>{if(e.key==='Enter'){const q=e.target.value.trim();const s=subjects.find(x=>x.name.includes(q));const l=lessons.find(x=>x.title.includes(q)||x.subject.includes(q));if(s)openSubject(s.name);else if(l){showPage('lessons');showLesson(l.title)}else{showPage('subjects');alert('لم نعثر على نتيجة مطابقة. جرّب اسم مادة أو درس.')}}});
+renderFiles();updateResults();
+</script>
+</body></html>
